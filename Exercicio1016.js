@@ -14,11 +14,11 @@
 // Print the necessary time followed by the message "minutos" that means minutes in Portuguese.
 
 var input = require('fs').readFileSync('stdin', 'utf8');
-var lines = input.split('\n')
+var lines = input.split('\n');
 
-const km = +lines
-const distancia = (km) => km*2
+const km = +lines;
+const distancia = (km) => km * 2;
 
-console.log(`${distancia(input)} minutos`)
+console.log(`${distancia(input)} minutos`);
 
 // let km = lines.map((n)=>+n)
