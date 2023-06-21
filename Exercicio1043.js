@@ -37,25 +37,3 @@ if (comparacao == true) {
     let area = (b + c) * a / 2;
     console.log(`Área = ${area.toFixed(1)}`);
 }
-
-// switch (comparacao){
-//     case (comparacao === true):{
-//         let perimetro = a + b + c 
-//         console.log(`Perimetro = ${perimetro.toFixed(1)}`)
-//     break;
-//     }default:
-//         let area = 1/2 * (a + b) * c
-//         console.log(`Area = ${area.toFixed(1)}`)
-// }
-
-// if ((b-c) < a < b + c) {
-//     console.log('é um triangulo')
-// } else if ((a-c)< b < a +c) {
-//     console.log('não é um triangulo')
-// } else if ((a-b)< c < a +b) {
-//     console.log ('é um triangulo' )
-// } else {
-//     console.log(`se fudeu`)
-// }
-
-

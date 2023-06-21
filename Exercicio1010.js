@@ -30,7 +30,7 @@ let total = 0
 //         }
 //     }
 // )
-console.log(`VALOR A PAGAR: R$ ${g``}`)
+console.log(`VALOR A PAGAR: R$ ${g}`)
 
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 // var lines = input.split('\n');

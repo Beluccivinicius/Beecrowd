@@ -17,6 +17,7 @@ let totalNotas = +lines[0];
 let totalM = +lines[1];
 let notas = [100, 50, 20, 10, 5, 2];
 let moedas = [100, 50, 25, 10, 5, 1]; 
+let resultado = 0
 
     console.log(`NOTAS:`)
     

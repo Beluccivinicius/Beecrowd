@@ -1,8 +1,9 @@
 var input = require('fs').readFileSync('stdin', 'utf8');
 var lines = input.split(' ');
 
-var produto = +lines[0]
-var quantidade = +lines[1]
+let produto = +lines[0]
+let quantidade = +lines[1]
+let informacaoFiltrada
 
 const lanches = [
     {
@@ -31,8 +32,11 @@ const lanches = [
         preco: 1.50
     }
 ]
+for (let i in lanches) {
+    if (lanches[i].codigoLista === produto) {
+    informacaoFiltrada = lanches[i];
+    break;
+    }
+}
 
-const codigos = lanches.find((codigo) => codigo.codigoLista === produto)
-let total = codigos.preco * quantidade
-
-console.log(`Total: R$ ${total.toFixed(2)}`)
+console.log(informacaoFiltrada)
