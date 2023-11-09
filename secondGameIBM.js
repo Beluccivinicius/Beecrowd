@@ -23,7 +23,7 @@ const levelUp = (lines) => {
     }
   }
 
-  return select;
+  return select.length;
 };
 
 console.log(levelUp(lines));

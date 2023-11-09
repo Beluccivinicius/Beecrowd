@@ -9,12 +9,24 @@ var lines = input.split("\n");
 let number = lines.map((n) => +n);
 
 function position(number) {
-  const [gamer, numberScores, ...rest] = number;
+  const [gamer, gamerLevelUp, ...rest] = number;
+
+  if (gamer != rest.length || gamerLevelUp > gamer) {
+    return { msg: "inconsistência de dados" };
+  }
+
+  if (gamer > 100000 || rest.length > 100000) {
+    return { msg: "Excedeu o numero de participantes" };
+  }
 
   let position = 1;
-  for (let j = 1; j <= numberScores; j++) {
+  for (let j = 1; j <= gamerLevelUp; j++) {
     let maior = rest.reduce((acc, curr) => Math.max(acc, curr), 0);
+    let menor = rest.reduce((acc, curr) => Math.min(acc, curr), 0);
 
+    if (menor < 0 || maior > 100) {
+      return { msg: "Scores incorretos" };
+    }
     j = position;
     for (let i = 0; i < rest.length; i++) {
       const index = rest.indexOf(maior, i);
