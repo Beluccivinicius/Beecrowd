@@ -12,7 +12,7 @@ function position(number) {
   const [gamer, numberScores, ...rest] = number;
 
   let position = 1;
-  let arrayPosition = [0];
+
   for (let j = 1; j <= numberScores; j++) {
     let maior = rest.reduce((acc, curr) => Math.max(acc, curr), 0);
 
@@ -25,7 +25,7 @@ function position(number) {
       }
     }
   }
-  return arrayPosition;
+  return rest;
 }
 
 console.log(position(number));
