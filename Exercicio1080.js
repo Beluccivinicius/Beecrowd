@@ -15,11 +15,6 @@ const countingAnimals = (totalAnimal) => {
       animals[letter].push(quantity);
     }
     return animals;
-    //monstrar para o vilella
-    // if (Object.keys(animals).lenght >= 3) {
-    //   console.log("i");
-    //   return a;
-    // }
   }, {});
 
   const rats = conta.R.reduce((acc, curr) => (acc += parseInt(curr)), 0);

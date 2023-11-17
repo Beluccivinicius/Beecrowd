@@ -18,7 +18,7 @@ function position(number) {
   if (gamer > 100000 || rest.length > 100000) {
     return { msg: "Excedeu o numero de participantes" };
   }
-
+  console.log(rest);
   let position = 1;
   for (let j = 1; j <= gamerLevelUp; j++) {
     let maior = rest.reduce((acc, curr) => Math.max(acc, curr), 0);
@@ -27,6 +27,7 @@ function position(number) {
     if (menor < 0 || maior > 100) {
       return { msg: "Scores incorretos" };
     }
+
     j = position;
     for (let i = 0; i < rest.length; i++) {
       const index = rest.indexOf(maior, i);

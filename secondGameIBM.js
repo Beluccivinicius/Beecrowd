@@ -4,7 +4,9 @@ var lines = input.split("\n");
 const levelUp = (lines) => {
   const [numberGames, cutoff, ...rest] = lines;
   const number = rest.map((n) => +n);
-
+  if (numberGames < cutoff) {
+    return;
+  }
   let select = [];
 
   for (let i = 0; i < cutoff; i++) {
