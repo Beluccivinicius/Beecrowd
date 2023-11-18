@@ -9,18 +9,18 @@ var lines = input.split("\n");
 let number = lines.map((n) => +n);
 
 function position(number) {
-  const [gamer, gamerLevelUp, ...rest] = number;
+  const [gamerLevelUp, gamers, ...rest] = number;
 
-  if (gamer != rest.length || gamerLevelUp > gamer) {
+  if (gamers != rest.length || gamers < gamerLevelUp) {
     return { msg: "inconsistência de dados" };
   }
 
-  if (gamer > 100000 || rest.length > 100000) {
+  if (gamerLevelUp > 100000 || rest.length > 100000) {
     return { msg: "Excedeu o numero de participantes" };
   }
   console.log(rest);
-  let position = 1;
-  for (let j = 1; j <= gamerLevelUp; j++) {
+
+  for (let j = 1; j <= gamers; j++) {
     let maior = rest.reduce((acc, curr) => Math.max(acc, curr), 0);
     let menor = rest.reduce((acc, curr) => Math.min(acc, curr), 0);
 
@@ -28,7 +28,6 @@ function position(number) {
       return { msg: "Scores incorretos" };
     }
 
-    j = position;
     for (let i = 0; i < rest.length; i++) {
       const index = rest.indexOf(maior, i);
 
@@ -38,7 +37,6 @@ function position(number) {
 
       if (index != -1) {
         rest[index] = `${j}`;
-        position++;
       }
     }
   }
