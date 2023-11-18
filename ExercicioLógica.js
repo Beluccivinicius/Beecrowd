@@ -43,16 +43,34 @@ const mainOrdering = (boxDisordered) => {
 
 console.log(mainOrdering(boxdisordered));
 
-const cardsToShuffle = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const cardsToShuffle = [1, 2, 3, 8, 5, 6, 7, 4, 9, 10];
+
+//O gerador linear congruencial
+// x0=seed; a=mltiplicador; b=incremento; m=módulo; n=tamanho do array desejado;
+const linearRandomGenerator = (x0, a, b, m, n) => {
+  const results = [];
+  for (let i = 0; i < n; i++) {
+    x0 = (a * x0 + b) % m;
+    results.push(x0);
+  }
+  return results;
+};
 
 const mainShuffle = (cardsToShuffle) => {
   let hand;
   const shuffleCards = [];
 
-  for (let i = 0; i < cardsToShuffle.length; i++) {
-    let randomNumber = Math.floor(Math.random() * cardsToShuffle.length);
-    shuffleCards.push(randomNumber);
+  for (let i = cardsToShuffle.length; i > 0; i--) {
+    let randomNumber = linearRandomGenerator(9, 5, 3, i, 1);
+    hand = cardsToShuffle[randomNumber];
+
+    const index = cardsToShuffle.indexOf(hand);
+
+    cardsToShuffle.splice(index, 1);
+
+    shuffleCards.push(hand);
   }
+
   return shuffleCards;
 };
 
