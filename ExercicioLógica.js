@@ -28,6 +28,7 @@ const mainOrdering = (boxDisordered) => {
 
   for (let j = 0; j < quantityCard; j++) {
     let hand = boxDisordered[0];
+
     for (let i = 0; i < quantityCard; i++) {
       if (hand > boxDisordered[i]) {
         hand = boxDisordered[i];
